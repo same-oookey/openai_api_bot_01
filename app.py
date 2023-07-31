@@ -35,12 +35,12 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in messages[1:]:  # 直近のメッセージを下に
-        speaker = "🙂"
+        speaker = "🙂User"
         if message["role"]=="assistant":
-            speaker="🤖"
+            speaker="🤖Ai"
 
         st.write(speaker + ": " + message["content"])
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
-st.title("スミセイ保険サポートAI")
+st.title("サポートAI")
 st.write("ChatGPT APIを使ったチャットボットです。")
