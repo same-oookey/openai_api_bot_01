@@ -34,10 +34,10 @@ def communicate():
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
-    for message in reversed(messages[1:]):  # 直近のメッセージを上に
+    for message in messages[1:]:  # 直近のメッセージを下に
+        speaker = "🙂"
         if message["role"]=="assistant":
             speaker="🤖"
-        speaker = "🙂"
 
         st.write(speaker + ": " + message["content"])
 
