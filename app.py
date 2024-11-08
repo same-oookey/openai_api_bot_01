@@ -1,7 +1,5 @@
 import streamlit as st
-from openai import OpenAI
-
-# OpenAIのインスタンスを生成し、APIキーを指定する
+import openai
 openai.api_key = st.secrets["OpenAIAPI"]["openai_api_key"]
 
 # st.session_stateを使いメッセージのやりとりを保存
