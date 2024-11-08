@@ -25,8 +25,9 @@ def communicate():
     )
 
     # ChatCompletionのレスポンスからボットメッセージを取得
-    bot_message = response.choices[0].message
-    messages.append({"role": "assistant", "content": bot_message["content"]})
+    bot_message_content = response['choices'][0]['message']['content']
+    bot_message = {"role": "assistant", "content": bot_message_content}
+    messages.append(bot_message)
 
     # 入力欄をクリア
     st.session_state["user_input"] = ""
